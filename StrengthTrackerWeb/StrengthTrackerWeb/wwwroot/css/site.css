@@ -38,14 +38,18 @@
     padding: 10px;
 }
 
-.new-workout-header h3, a {
-    display: inline;
-}
+    .new-workout-header h3, a {
+        display: inline;
+    }
 
-.new-workout-header h3 {
-    padding-right: 10px;
-}
+    .new-workout-header h3 {
+        padding-right: 10px;
+    }
 
 .exercise-cell {
     padding: 10px;
+}
+
+input {
+    width: 100%;
 }

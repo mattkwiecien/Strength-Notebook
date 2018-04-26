@@ -3,31 +3,24 @@
 }
 <div ng-controller="newWorkoutController">
     <div class="new-workout-header">
-        <h3>Today's Workout {{Test}}</h3>
-        <a href="">Save</a> /
-        <a href="">Edit</a> /
-        <a href="">Delete</a>
+        <h3>Current Workout</h3>
+        <a ng-click="save">Save</a> /
+        <a ng-click="edit">Edit</a> /
+        <a ng-click="delete">Delete</a>
     </div>
     <div class="exercise-container container">
-
         <div class="exercise-row row">
             <div class="exercise-cell col-sm-2">
-                <input placeholder="Exercise: Deadlift" />
+                <label>Exercise<input placeholder="Deadlift" /></label>
             </div>
             <div class="exercise-cell col-sm-2">
-                <input placeholder="Weight: 135" />
+                <label>Weight:<input placeholder="Weight: 135" /></label>
             </div>
             <div class="exercise-cell col-sm-2">
-                <input placeholder="Sets: 3" />
+                <label>Sets:<input ng-model="sets"/></label>
             </div>
-            <div class="exercise-cell col-sm-2">
-                <input placeholder="Set 1" />
-            </div>
-            <div class="exercise-cell col-sm-2">
-                <input placeholder="Set 2" />
-            </div>
-            <div class="exercise-cell col-sm-2">
-                <input placeholder="Set 3" />
+            <div ng-repeat="i in getNumberOf(sets) track by $index" class="exercise-cell col-sm-1">
+                <label>Repetitions:<input placeholder="Set {{$index+1}}" /></label>
             </div>
         </div>
         <div class="exercise-row row">
