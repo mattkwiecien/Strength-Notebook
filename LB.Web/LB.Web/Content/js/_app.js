@@ -1,1 +1,1 @@
-﻿var STApp = angular.module('STApp', []);
+﻿var LBApp = angular.module('LBApp', []);

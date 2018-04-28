@@ -1,5 +1,5 @@
-var STApp = angular.module('STApp', []);
-STApp.controller('currentWorkoutController', ['$scope', function ($scope) {
+var LBApp = angular.module('LBApp', []);
+LBApp.controller('currentWorkoutController', ['$scope', function ($scope) {
     $scope.sets;
     $scope.exerciseRows = [];
 

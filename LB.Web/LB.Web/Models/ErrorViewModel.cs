@@ -1,6 +1,6 @@
 using System;
 
-namespace StrengthTrackerWeb.Models {
+namespace LB.Web.Models {
 	public class ErrorViewModel {
 		public string RequestId { get; set; }
 

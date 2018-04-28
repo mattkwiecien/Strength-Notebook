@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace StrengthTrackerWeb {
+namespace LB.Web {
 	public class Program {
 		public static void Main(string[] args) {
 			BuildWebHost(args).Run();

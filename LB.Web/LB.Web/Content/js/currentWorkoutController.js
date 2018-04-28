@@ -1,4 +1,4 @@
-﻿STApp.controller('currentWorkoutController', ['$scope', function ($scope) {
+﻿LBApp.controller('currentWorkoutController', ['$scope', function ($scope) {
     $scope.sets;
     $scope.exerciseRows = [];
 
