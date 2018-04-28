@@ -1,8 +1,10 @@
-﻿/// <binding BeforeBuild='scripts' ProjectOpened='copy' />
+﻿/// <binding BeforeBuild='scripts, css' ProjectOpened='copy' />
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var minifyCSS = require('gulp-clean-css');
+
 
 var paths = {
     webroot: './wwwroot/'
@@ -25,6 +27,13 @@ gulp.task('scripts', function () {
         .pipe(rename('scripts.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(paths.webroot + 'js'))
+});
+
+gulp.task('css', function () {
+    gulp.src(paths.webroot + '/css/site.css')
+        .pipe(minifyCSS())
+        .pipe(concat('site.min.css'))
+        .pipe(gulp.dest(paths.webroot + 'css'))
 });
 
 gulp.task('copy', function () {
