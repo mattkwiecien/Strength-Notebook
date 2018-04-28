@@ -34,15 +34,16 @@
     }
 }
 
-.new-workout-header {
+/* current workout */
+.current-header {
     padding: 10px;
 }
 
-    .new-workout-header h3, a {
+    .current-header h3, a {
         display: inline;
     }
 
-    .new-workout-header h3 {
+    .current-header h3 {
         padding-right: 10px;
     }
 
@@ -50,6 +51,6 @@
     padding: 10px;
 }
 
-input {
-    width: 100%;
+label {
+    font-weight: 100;
 }
