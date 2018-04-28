@@ -1,0 +1,1 @@
+﻿var LBApp = angular.module('LBApp', []);
