@@ -1,4 +1,4 @@
-﻿LBApp.controller('currentWorkoutController', ['$scope', function ($scope) {
+﻿LBApp.controller('currentWorkoutController', ['$scope', '$http', function ($scope, $http) {
     $scope.sets;
     $scope.exerciseRows = [];
 
@@ -16,6 +16,10 @@
         row.isEmpty = false;
 
         $scope.exerciseRows.push(new ExerciseRow());
+    }
+
+    $scope.save = function () {
+        
     }
 
     function createRangeArrayFromNumber(number) {

@@ -16,6 +16,7 @@ var jsFiles = [
 ];
 var itemsToCopy = {
     './node_modules/angular/angular*.js': paths.webroot + 'lib',
+    './node_modules/chart.js/dist/chart*.js': paths.webroot + 'lib'
 };
 paths.js = paths.webroot + 'js/**/*.js';
 paths.minJs = paths.webroot + 'js/**/*.min.js';
