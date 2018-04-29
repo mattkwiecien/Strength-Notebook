@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Current Workout";
+}
+<div ng-controller="currentWorkoutController">
+    <div>
+        <h3>Current Workout</h3>
+        <button class="btn btn-sm btn-primary" ng-click="save()">Save</button>
+        <button class="btn btn-sm" ng-click="delete()">Delete</button>
+    </div>
+    @Html.Partial("CurrentWorkout.Details")
+</div>

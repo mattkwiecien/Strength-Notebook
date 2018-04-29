@@ -24,12 +24,6 @@ namespace LB.Web.Controllers {
 			return View();
 		}
 
-        public IActionResult CurrentWorkout() {
-            ViewData["Message"] = "Your current workout page.";
-
-            return View();
-        }
-
 		public IActionResult Error() {
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 		}
