@@ -2,32 +2,26 @@
     ViewData["Title"] = "CurrentWorkout";
 }
 <div ng-controller="currentWorkoutController">
-    <div class="current-header">
+    <div>
         <h3>Current Workout</h3>
-        <a ng-click="save">Save</a> /
-        <a ng-click="edit">Edit</a> /
-        <a ng-click="delete">Delete</a>
+        <button class="btn btn-sm btn-primary" ng-click="save()">Save</button>
+        <button class="btn btn-sm" ng-click="delete()">Delete</button>
     </div>
 
     <div class="exercise-container container">
-        <div ng-repeat="row in exerciseRows" class="exercise-row row">
+        <div ng-repeat="row in exerciseRows" class="form-group exercise-row row">
             <div class="exercise-cell col-sm-2">
-                <label>Exercise<input ng-model="row.Name" ng-change="addNewExerciseRow(row)"/></label>
+                <label>Lift:<input class="form-control" ng-model="row.Name" ng-change="addNewExerciseRow(row)" /></label>
             </div>
-            <div ng-if="!row.isEmpty" class="exercise-cell col-sm-2">
-                <label>Weight:<input ng-model="row.Weight"/></label>
+            <div ng-if="!row.isEmpty" class="exercise-cell col-sm-1">
+                <label>Weight:<input class="form-control" ng-model="row.Weight" /></label>
             </div>
-            <div ng-if="!row.isEmpty" class="exercise-cell col-sm-2">
-                <label>Sets:<input ng-model="row.Sets"/></label>
+            <div ng-if="!row.isEmpty" class="exercise-cell col-sm-1">
+                <label>Sets:<input class="form-control" ng-model="row.Sets" /></label>
             </div>
             <div ng-repeat="i in getNumberOf(row.Sets) track by $index" class="exercise-cell col-sm-1">
-                <label>Reps:<input placeholder="Set {{$index+1}}"/></label>
+                <label>Reps:<input class="form-control" placeholder="Set {{$index+1}}" /></label>
             </div>
         </div>
     </div>
 </div>
-
-@section Scripts {
-    <script type="text/javascript" src="@Url.Content("./../Content/js/_app.js")"></script>
-    <script type="text/javascript" src="@Url.Content("./../Content/js/currentWorkoutController.js")"></script>
-}
