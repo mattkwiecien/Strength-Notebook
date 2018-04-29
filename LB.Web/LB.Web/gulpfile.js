@@ -14,6 +14,9 @@ var jsFiles = [
     './Content/js/_app.js',
     './Content/js/!(_app)*.js'
 ];
+var cssFiles = [
+    './Content/css/*'
+]
 var itemsToCopy = {
     './node_modules/angular/angular*.js': paths.webroot + 'lib',
     './node_modules/chart.js/dist/chart*.js': paths.webroot + 'lib'
@@ -31,9 +34,11 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('css', function () {
-    gulp.src(paths.webroot + '/css/site.css')
+    return gulp.src(cssFiles)
+        .pipe(concat('styles.css'))
+        .pipe(gulp.dest(paths.webroot + 'css'))
         .pipe(minifyCSS())
-        .pipe(concat('site.min.css'))
+        .pipe(concat('styles.min.css'))
         .pipe(gulp.dest(paths.webroot + 'css'))
 });
 
